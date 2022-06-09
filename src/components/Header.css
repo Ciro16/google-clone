@@ -1,0 +1,27 @@
+.home__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.home__header a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 13px;
+}
+
+.home__header a:hover {
+  text-decoration: underline;
+}
+
+.home__headerLeft {
+  margin-left: 25px;
+}
+
+.home__headerRight {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}

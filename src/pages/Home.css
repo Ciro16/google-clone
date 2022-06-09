@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.home__body img {
+  height: 190px;
+  object-fit: contain;
+}
