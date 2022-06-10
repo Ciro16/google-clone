@@ -1,9 +1,18 @@
 .search {
   margin-top: -40px;
 }
+
+.search__down {
+  margin-top: 0px;
+}
+
 .search_buttons {
   display: flex;
   justify-content: center;
   margin-top: 5px;
   gap: 10px;
+}
+
+.search__hideButtons {
+  display: none;
 }
