@@ -1,0 +1,9 @@
+.search {
+  margin-top: -40px;
+}
+.search_buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  gap: 10px;
+}

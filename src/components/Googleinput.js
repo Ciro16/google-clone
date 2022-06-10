@@ -5,7 +5,7 @@ export const GoogleInput = styled.div`
   justify-content: space-between;
   align-items: center;
   border: 1px solid lightgray;
-  padding: 10px 20px;
+  padding: 3px 20px;
   border-radius: 999px;
   width: 65vw;
   max-width: 560px;
