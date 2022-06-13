@@ -8,11 +8,22 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import RoomIcon from "@mui/icons-material/Room";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AppsIcon from "@mui/icons-material/Apps";
-
-import "./SearchPage.css";
 import { Avatar } from "@mui/material";
 
+import { selectSearchString } from "../features/searchSlice";
+import { useGoogleSearch } from "../useGoogleSearch";
+
+import { useSelector } from "react-redux";
+import "./SearchPage.css";
+import Result from "../components/Result";
+
 const SearchPage = () => {
+  const searchString = useSelector(selectSearchString);
+
+  const { data } = useGoogleSearch(searchString);
+
+  console.log(data);
+
   return (
     <div className="searchPage">
       <div className="searchPage__header">
@@ -24,7 +35,7 @@ const SearchPage = () => {
           />
         </Link>
         <div className="searchPage__headerCenter">
-          <Search hideButtons />
+          <Search hideButtons searchValue={searchString} />
           <div className="searchPage__options">
             <div className="searchPage__optionsLeft">
               <div className="searchPage__option">
@@ -74,6 +85,19 @@ const SearchPage = () => {
           <Avatar className="headerRight__avatar" />
         </div>
       </div>
+
+      {searchString && (
+        <div className="searchPage__results">
+          <p className="searchPage__resultCount">
+            About {data?.searchInformation.formattedTotalResults}
+            results ({data?.searchInformation.formattedSearchTime} seconds )
+          </p>
+
+          {data?.items.map((item, index) => (
+            <Result key={index} data={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

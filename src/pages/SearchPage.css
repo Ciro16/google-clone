@@ -67,3 +67,11 @@
   width: 1.8rem;
   margin-left: 1rem;
 }
+
+.searchPage__results {
+  max-width: 650px;
+  margin-top: 20px;
+  margin-left: 160px;
+  margin-bottom: 100px;
+  font-size: 14px;
+}

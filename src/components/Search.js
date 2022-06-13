@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Search.css";
 
 import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
@@ -6,10 +7,15 @@ import { IconButton } from "@mui/material";
 import { GoogleInput } from "./GoogleInput";
 import { GoogleButton } from "./GoogleButton";
 
-import "./Search.css";
+import { setSearchString } from "../features/searchSlice";
+import { useDispatch } from "react-redux";
 
-const Search = ({ hideButtons = false }) => {
-  const [search, setSearch] = useState("");
+import { useNavigate } from "react-router-dom";
+
+const Search = ({ hideButtons = false, searchValue = "" }) => {
+  const [search, setSearch] = useState(searchValue);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handelChange = (e) => {
     setSearch(e.target.value);
@@ -17,6 +23,9 @@ const Search = ({ hideButtons = false }) => {
 
   const handelSubmit = (e) => {
     e.preventDefault();
+
+    dispatch(setSearchString(search));
+    navigate("/search");
   };
 
   return (

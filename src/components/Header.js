@@ -14,7 +14,9 @@ const Header = () => {
       </div>
 
       <div className="home__headerRight">
-        <Link to="/gmail">Gmail</Link>
+        <a href="https://mail.google.com/" target="_blank" rel="noreferrer">
+          Gmail
+        </a>
         <Link to="/images">Imágenes</Link>
         <IconButton>
           <AppsIcon fontSize="medium" />
