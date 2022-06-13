@@ -22,8 +22,6 @@ const SearchPage = () => {
 
   const { data } = useGoogleSearch(searchString);
 
-  console.log(data);
-
   return (
     <div className="searchPage">
       <div className="searchPage__header">

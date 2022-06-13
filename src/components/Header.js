@@ -1,5 +1,5 @@
 import AppsIcon from "@mui/icons-material/Apps";
-import Avatar from "@mui/icons-material/AccountCircle";
+import { Avatar } from "@mui/material";
 import { IconButton } from "@mui/material";
 
 import "./Header.css";
@@ -22,7 +22,9 @@ const Header = () => {
           <AppsIcon fontSize="medium" />
         </IconButton>
 
-        <Avatar fontSize="large" />
+        <IconButton>
+          <Avatar fontSize="large" />
+        </IconButton>
       </div>
     </div>
   );
