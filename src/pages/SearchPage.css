@@ -57,8 +57,12 @@
 
 .searchPage__headerRight {
   display: flex;
+  align-items: center;
   margin-top: 2rem;
   margin-right: 40px;
+  margin-left: 10px;
+
+  position: relative;
 }
 
 .headerRight__avatar {

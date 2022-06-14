@@ -8,19 +8,42 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import RoomIcon from "@mui/icons-material/Room";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AppsIcon from "@mui/icons-material/Apps";
-import { Avatar } from "@mui/material";
+
+import { Avatar, IconButton } from "@mui/material";
 
 import { selectSearchString } from "../features/searchSlice";
 import { useGoogleSearch } from "../useGoogleSearch";
 
+import { useDispatch } from "react-redux";
+import { login } from "../features/userSlice";
+
 import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
+
 import "./SearchPage.css";
 import Result from "../components/Result";
+import InfoUser from "../components/InfoUser";
+import { useState } from "react";
 
 const SearchPage = () => {
   const searchString = useSelector(selectSearchString);
 
   const { data } = useGoogleSearch(searchString);
+
+  const user = useSelector(selectUser);
+
+  const [openInfoUser, setOpenInfoUser] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handelClick = () => {
+    if (Object.keys(user).length === 0) {
+      // Si no está logueado, abrimos login
+      dispatch(login());
+    } else {
+      setOpenInfoUser(!openInfoUser);
+    }
+  };
 
   return (
     <div className="searchPage">
@@ -80,7 +103,14 @@ const SearchPage = () => {
         </div>
         <div className="searchPage__headerRight">
           <AppsIcon fontSize="medium" />
-          <Avatar className="headerRight__avatar" />
+
+          <IconButton onClick={handelClick}>
+            <Avatar fontSize="large" src={user?.photoURL} />
+          </IconButton>
+
+          {openInfoUser && (
+            <InfoUser user={user} setOpenInfoUser={setOpenInfoUser} />
+          )}
         </div>
       </div>
 

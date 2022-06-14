@@ -22,15 +22,11 @@ export const selectUser = (state) => state.userData.userData;
 
 export default userSlice.reducer;
 
-export const login = (setOpenInfoUser) => (dispatch) => {
+export const login = () => (dispatch) => {
   // Si no está logueado, abrimos login
   signInWithPopup(auth, provider)
     .then((response) => {
       dispatch(setUser(response.user));
     })
-    .catch((error) => {
-      const email = error.customData.email;
-      alert(`Error al autenticar a ${email}`);
-    })
-    .finally(setOpenInfoUser(false));
+    .catch((error) => {});
 };

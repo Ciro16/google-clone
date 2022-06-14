@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import SearchPage from "./pages/SearchPage";
 
+import { useDispatch } from "react-redux";
+import { setUser } from "./features/userSlice";
+
+import { auth } from "./firebase";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(setUser(user));
+      }
+    });
+  }, []);
+
   return (
     <div className="app">
       <BrowserRouter>
