@@ -5,7 +5,29 @@ import { IconButton } from "@mui/material";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
+
+import { login } from "../features/userSlice";
+import { useState } from "react";
+
 const Header = () => {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const [openInfoUser, setOpenInfoUser] = useState(false);
+
+  const handelClick = () => {
+    if (Object.keys(user).length === 0) {
+      // Si no está logueado, abrimos login
+      dispatch(login(setOpenInfoUser));
+    } else {
+      setOpenInfoUser(true);
+    }
+  };
+
   return (
     <div className="home__header">
       <div className="home__headerLeft">
@@ -22,9 +44,11 @@ const Header = () => {
           <AppsIcon fontSize="medium" />
         </IconButton>
 
-        <IconButton>
+        <IconButton onClick={handelClick}>
           <Avatar fontSize="large" />
         </IconButton>
+
+        {openInfoUser && <h1>Info user</h1>}
       </div>
     </div>
   );
