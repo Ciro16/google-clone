@@ -3,6 +3,9 @@ import Header from "../components/Header";
 import "./Home.css";
 
 const Home = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+
   return (
     <div className="home">
       <Header />
@@ -13,6 +16,9 @@ const Home = () => {
         />
         <Search />
       </div>
+      <footer className="home_footer">
+        <p>Desarrollado por: Ciro Pérez Iglesias &copy; {year}</p>
+      </footer>
     </div>
   );
 };

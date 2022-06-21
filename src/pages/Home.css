@@ -15,3 +15,14 @@
   height: 190px;
   object-fit: contain;
 }
+
+.home_footer {
+  background-color: #f2f2f2;
+  height: 60px;
+  margin-top: 80px;
+}
+
+.home_footer p {
+  text-align: center;
+  line-height: 60px;
+}

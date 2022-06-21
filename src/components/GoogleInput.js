@@ -11,15 +11,15 @@ export const GoogleInput = styled.div`
   max-width: 560px;
   margin: 0 auto;
   margin-top: 20px;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &:hover {
-    -webkit-box-shadow: 0px 2px; 4px 3px rgba(232, 232, 232, 0.7);
-    box-shadow: 2px 2px; 4px 3px rgba(232, 232, 232, 0.7);
+    -webkit-box-shadow: 5px 5px 6px -1px #898989;
+    box-shadow: 5px 5px 6px -1px #898989;
     cursor: pointer;
   }
 
-  & .search__inputIcon{
+  & .search__inputIcon {
     color: gray;
   }
 
@@ -30,7 +30,7 @@ export const GoogleInput = styled.div`
     border: none;
   }
 
-  & input:focus{
-    outline-width: 0
+  & input:focus {
+    outline-width: 0;
   }
 `;
