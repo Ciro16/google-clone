@@ -19,7 +19,7 @@ function App() {
         dispatch(setUser(user));
       }
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="app">
