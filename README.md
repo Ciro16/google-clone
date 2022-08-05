@@ -1,26 +1,27 @@
-# Clon de Google
+# Google Clone
 
-La finalidad de este proyecto es desarrollar uno clon de famoso buscador Google utilizando la librería ReactJS <img src="react.ico" alt="drawing" width="16"/>, con las funcionalidades de buscar por internet e inicio de sesión, todo esto usando las API's que Google provee a los desarrolladores.
+The purpose of this project is to develop a clone of famous search engine Google using the library ReactJS <img src="react.ico" alt="drawing" width="16"/>, with web search and login features, all using the APIs that Google provides to developers.
 
-## Comenzando 🚀
+## Starting 🚀
 
-Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+These instructions will allow you to get a working copy of the project on your local machine for development and testing purposes.
 
-## Instalación 🔧
+## Installation 🔧
 
-- Clonar el repositorio en tu disco local. ⬇️
-- Debes tener instalado NodeJS.
-- Abre una terminal en la raiz del proyecto.
-- Ejecuta npm run start. Esto levantará un servidor web local.
-- Ahora a probarlo 😊
+- Clone the repository on your local disk. ⬇️
+- You must have NodeJS installed.
+- Open a terminal at the root of the project.
+- Run npm run start. This will raise a local web server.
+- Now to prove it 😊
 
-## Construido con 🛠
+## Built with 🛠
 
 - ReactJS
+- HTML
 - CSS3
 - Javascript
 
-## Dependencias utilizadas 🔗
+## Dependencies used 🔗
 
 - REDUX
 - React Router DOM
@@ -28,6 +29,6 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 - Firebase
 - Material UI
 
-## Licencia 📄
+## License 📄
 
-Este proyecto está bajo la Licencia (MIT)
+This project is under License (MIT)
